@@ -2,19 +2,20 @@ _____________________________________
 -------------------------------------
 || __ .. ** SAJTÓFIGYELŐ  ** .. __ ||
  -----------------------------------
-          --  ecsitomi  --
 
 
-
--- PROJEKT:
+--------
+-- PROJEKT --
+------
 
 Listázza YouTube-ról a ma feltöltött magyar videókat.
 A videók hanganyagait lementeni szövegbe.
 A szövegben ellenőrzi, hogy a keresett kulcsszó szerepel-e.
 
 
-
--- PROTOTIPUS:
+--------
+-- PROTOTIPUS --
+------
 
 run_all.bat     >> futtatja a projektet Windowson, ami áll:
 
@@ -31,20 +32,21 @@ ytKeyword       >> megkérdezi hogy milyen szót keresel
                 >> hogy található-e ilyen.
 
 
+--------
+-- TELEPÍTÉS --
+------
 
--- TELEPÍTÉS:
-
->> API KEY:
+> API KEY:
 ytScrapper5 >> Google Cloud projekt / YouTube Data API v3 certification key
 
->> PIP INSTALL:
+> PIP INSTALL:
 python
 googleapiclient
 langdetect 
 whisper
 yt_dlp
 
->> PATH:
+> PATH:
 ffmpeg
 
 
@@ -69,7 +71,10 @@ Projekt:        web integrálás
 ------------------------------------------------
 
 
-Bp. 2025.05.28.
+> Bp. 2025.05.28.
+
 Ecsedi Tamás József
+
+> ecsitomi
 
 
