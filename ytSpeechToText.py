@@ -5,6 +5,9 @@ from urllib.parse import urlparse, parse_qs
 import whisper
 import yt_dlp
 
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
+
 
 def extract_video_id(url):
     """

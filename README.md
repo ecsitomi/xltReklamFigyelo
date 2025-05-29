@@ -1,8 +1,8 @@
 _____________________________________
 -------------------------------------
-|| __ .. ** SAJTÓFIGYELŐ  ** .. __ ||
+|| __ .. ** REKLÁMFIGYELŐ  ** .. __ ||
  -----------------------------------
-
+Készítette: ECSEDI TAMÁS
 
 --------
 -- PROJEKT --
@@ -19,13 +19,14 @@ A szövegben ellenőrzi, hogy a keresett kulcsszó szerepel-e.
 
 run_all.bat     >> futtatja a projektet Windowson, ami áll:
 
-ytScrapper5     >> listáz 5 db ma megjelent magyar YT videót
+ytScrapper5     >> listáz max 5 db ma vagy tegnap megjelent magyar YT videót
                 >> a video_Scrapper.txt fájlba
 
-ytSpeechToText  >> a demoban 1 videót .mp3-ba letölt
-                >> a video_textToSpeech.txt-ből 
-                >> (ez csak minta fájl a video_Scrapper.txt helyett)
-                >> és elmenti video_Keyword.txt-be a szöveget
+ytSpeechToText  >> a listázott videókból .mp3 csinálunk
+                  >>  (a demoban a video_textToSpeech.txt használjuk,
+                  >>  ahol egy db egyperces magyar videó van,
+                  >>  a felesleges letöltögetések elkerülése miatt)
+                >> és elmenti a videó szövegét a video_Keyword.txt-be
 
 ytKeyword       >> megkérdezi hogy milyen szót keresel
                 >> és ellenőrzi a lementett szövegekben,

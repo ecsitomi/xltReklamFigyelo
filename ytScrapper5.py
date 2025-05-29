@@ -1,8 +1,11 @@
 from googleapiclient.discovery import build
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from langdetect import detect, LangDetectException
 from dotenv import load_dotenv
 import os
+
+print("Reklámfigyelő")
+print("Készítette: ECSEDI TAMÁS\n")
 
 # API kulcsod ide
 load_dotenv()
@@ -10,8 +13,13 @@ api_key = os.getenv("API_KEY")
 
 # Mai nap kezdete és vége UTC-ben
 now = datetime.now(timezone.utc)
-start_of_day = now.replace(hour=0, minute=0, second=0, microsecond=0)
+#start_of_day = now.replace(hour=0, minute=0, second=0, microsecond=0)
 end_of_day = now.replace(hour=23, minute=59, second=59, microsecond=999999)
+
+# Tegnapi nap kezdete és vége UTC-ben
+yesterday = datetime.now(timezone.utc) - timedelta(days=1)
+start_of_day = yesterday.replace(hour=0, minute=0, second=0, microsecond=0)
+#end_of_day = yesterday.replace(hour=23, minute=59, second=59, microsecond=999999)
 
 # YouTube API kliens létrehozása
 youtube = build('youtube', 'v3', developerKey=api_key)
@@ -34,7 +42,7 @@ with open(output_file, "w", encoding="utf-8") as f:
     while saved_count < 5:
         request = youtube.search().list(
             part='snippet',
-            maxResults=25,
+            maxResults=50,
             publishedAfter=start_of_day.isoformat(),
             publishedBefore=end_of_day.isoformat(),
             type='video',
